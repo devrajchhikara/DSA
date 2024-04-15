@@ -55,7 +55,7 @@ void display(node* head){
     
 }
 
-void deleteAtHead(node* head){
+void deleteAtHead(node* &head){
     node* todelete = head;
     head = head->next;
     head->prev = NULL;
@@ -64,12 +64,13 @@ void deleteAtHead(node* head){
 }
 
 void Delete(node* &head, int pos){
-    node* temp = head;
-    
     if(pos == 1){
         deleteAtHead(head);
         return;
     }
+    
+    node* temp = head;
+    
     int count = 1;
     while (temp != NULL && count != pos){
         temp = temp->next;
@@ -101,4 +102,3 @@ int main(){
     display(head);
     return 0;
 }
-hiuhfERROR ERROR
